@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-	<xacro:property name="base_x" value=".2148" />
-	<xacro:property name="base_y" value=".106" />
-	<xacro:property name="base_z" value=".142" />
+	<xacro:property name="base_x" value="0.2148" />
+	<xacro:property name="base_y" value="0.106" />
+	<xacro:property name="base_z" value="0.142" />
 
-	<xacro:property name="shoulder_x" value=".109" />
-	<xacro:property name="shoulder_y" value=".26" />
+	<xacro:property name="shoulder_x" value="0.109" />
+	<xacro:property name="shoulder_y" value="0.26" />
 
 	<xacro:property name="hinge_offset" value=".029" />
 
