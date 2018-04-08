@@ -44,7 +44,7 @@
 			<type>transmission_interface/SimpleTransmission</type>
 			<actuator name="${name}_ankle_motor" />
 			<joint name="${name}_ankle_joint">
-				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+				<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
 			</joint>
 		</transmission>
     

@@ -14,7 +14,7 @@
 
 	<xacro:include filename="earth_rover.gazebo.xacro" />
 
-	<!-- link of convenience, makes things more symmetrical -->
+
 
 	<link name="base_link" />
 
@@ -28,6 +28,8 @@
 			<inertia ixx="1" iyy="1" izz="1" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 	</link>
+
+
 
 	<joint name="base_link_inertia_joint" type="fixed">
 		<parent link="base_link" />
@@ -47,5 +49,8 @@
 	<xacro:ankle name="front_right" parent="front_base_link" reflect="-1" reflect_y="1" />
 	<xacro:ankle name="back_left" parent="back_base_link" reflect="1" reflect_y="-1" />
 	<xacro:ankle name="back_right" parent="back_base_link" reflect="-1" reflect_y="-1" />
+
+
+	<xacro:earth_rover_gazebo_tags />
 
 </robot>
