@@ -1,0 +1,20 @@
+<launch>
+
+    <arg name="drive_controller" default="skid_controller" />
+    <arg name="steer_controller" default="ankle_mock_controller" />
+
+	<!-- <include file="$(find ankle_publisher)/launch/ankle_publisher_launch.launch" /> -->
+
+    <rosparam file="$(find earth_rover_control)/config/control.yaml" command="load" />
+
+	<!-- Load the controller -->
+	<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" args=" $(arg drive_controller) $(arg steer_controller) joint_state_controller" />
+
+    <!-- Load a Controller MUX -->
+    <node pkg="twist_mux" type="twist_mux" name="twist_mux">
+        <rosparam command="load" file="$(find earth_rover_control)/config/mux_config.yaml" />
+        <remap from="cmd_vel_out" to="$(arg drive_controller)/cmd_vel" />
+    </node>
+
+</launch>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="earth_rover" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:macro name="earth_rover_tags">
+        <gazebo>
+            <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+                <robotNamespace>/earth_rover</robotNamespace>
+            </plugin>
+        </gazebo>
+
+        <!-- Might need to add stuff here?.... -->
+
+    </xacro:macro>
+
+</robot>

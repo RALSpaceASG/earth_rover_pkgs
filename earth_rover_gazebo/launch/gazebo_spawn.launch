@@ -1,0 +1,20 @@
+<launch>
+
+	<arg name="x" value="0.0" />
+	<arg name="y" value="0.0" />
+	<arg name="z" value="1.0" />
+	<arg name="roll" value="0.0" />
+	<arg name="pitch" value="0.0" />
+	<arg name="yaw" value="0.0" />
+
+	<arg name="spawn_pose" value="-x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)" />
+
+	<include file="$(find earth_rover_description)/launch/description.launch" />
+
+	<rosparam command="load" param="gazebo_ros_control" file="$(find earth_rover_gazebo)/config/gazebo_ros_control.yaml" />
+
+	<!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+	<node name="spawn_earth_rover_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model earth_rover -robot_namespace / $(arg spawn_pose)" />
+
+	<include file="$(find earth_rover_control)/launch/control.launch" />
+</launch>
