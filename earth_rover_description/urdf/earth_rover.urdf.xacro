@@ -9,7 +9,7 @@
 	<xacro:include filename="base/base.urdf.xacro" />
 	<xacro:include filename="base/battery_block.urdf.xacro" />
 	<xacro:include filename="wheels/wheels.urdf.xacro" />
-
+	<!-- <xacro:include filename="ankles/ankles.urdf.xacro" /> -->
 
 	<xacro:include filename="earth_rover.gazebo.xacro" />
 
@@ -31,7 +31,7 @@
 
 	<!-- link of convenience, makes things more symmetrical -->
 
-	<link name="base_link"/>
+	<link name="base_link" />
 
 	<!-- gazebo doesn't recognise links without mass, but KDL doesn't
 	     like the base link to have inertia, so we have this silly

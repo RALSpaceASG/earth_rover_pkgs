@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<xacro:property name="angle_limit_cw" value="${M_PI/4}" />
+	<xacro:property name="angle_limit_ccw" value="${M_PI/4}" />
+
+	<xacro:property name="ankle_offset_x" value="0.0914" />
+	<xacro:property name="ankle_offset_y" value="0.140" />
+	<xacro:property name="ankle_offset_z" value="0.051" />
