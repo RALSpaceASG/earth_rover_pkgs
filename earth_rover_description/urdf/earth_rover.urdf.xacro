@@ -5,29 +5,14 @@
 
 	<xacro:property name="fix_base" value="false" />
 
+	<xacro:include filename="00-earth_rover_properties.xacro" />
 
 	<xacro:include filename="base/base.urdf.xacro" />
 	<xacro:include filename="base/battery_block.urdf.xacro" />
 	<xacro:include filename="wheels/wheels.urdf.xacro" />
-	<!-- <xacro:include filename="ankles/ankles.urdf.xacro" /> -->
+	<xacro:include filename="ankles/ankles.urdf.xacro" />
 
 	<xacro:include filename="earth_rover.gazebo.xacro" />
-
-	<material name="yellow">
-		<color rgba=".8 .8 0 1" />
-	</material>
-
-	<material name="black">
-		<color rgba="0 0 0 1" />
-	</material>
-
-	<material name="green">
-		<color rgba="0 0.8 0 1" />
-	</material>
-
-	<material name="silver">
-		<color rgba=".8 .8 .8 1" />
-	</material>
 
 	<!-- link of convenience, makes things more symmetrical -->
 
@@ -52,9 +37,15 @@
 	<base_block name="front_base" parent="base_link" reflect="1" colour="yellow" />
 	<base_block name="back_base" parent="base_link" reflect="-1" colour="yellow" />
 
+
 	<xacro:wheel name="front_left" parent="front_base_link" reflect="1" reflect_y="1" />
 	<xacro:wheel name="front_right" parent="front_base_link" reflect="-1" reflect_y="1" />
 	<xacro:wheel name="back_left" parent="back_base_link" reflect="1" reflect_y="-1" />
 	<xacro:wheel name="back_right" parent="back_base_link" reflect="-1" reflect_y="-1" />
+
+	<xacro:ankle name="front_left" parent="front_base_link" reflect="1" reflect_y="1" />
+	<xacro:ankle name="front_right" parent="front_base_link" reflect="-1" reflect_y="1" />
+	<xacro:ankle name="back_left" parent="back_base_link" reflect="1" reflect_y="-1" />
+	<xacro:ankle name="back_right" parent="back_base_link" reflect="-1" reflect_y="-1" />
 
 </robot>
