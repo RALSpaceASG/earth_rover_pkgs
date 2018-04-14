@@ -42,3 +42,20 @@ ankle_mock_controller:
   linear/x/has_velocity_limits: false
   angular/z/has_velocity_limits: false
 
+
+steered_controller:
+  type: SWBC/SteeredWheelBaseController
+  wheels:
+    - steering_joint: front_left_ankle_joint
+      axle_joint: front_left_wheel_joint
+      diameter: 0.250
+    - steering_joint: front_right_ankle_joint
+      axle_joint: front_right_wheel_joint
+      diameter: 0.250
+    - steering_joint: back_left_ankle_joint
+      axle_joint: back_left_wheel_joint
+      diameter: 0.250
+    - steering_joint: back_right_ankle_joint
+      axle_joint: back_right_wheel_joint
+      diameter: 0.250
+

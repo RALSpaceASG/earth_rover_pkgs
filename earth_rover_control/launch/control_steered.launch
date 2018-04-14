@@ -1,0 +1,19 @@
+<launch>
+
+    <arg name="steered_controller" default="steered_controller" />
+
+	<!-- <include file="$(find ankle_publisher)/launch/ankle_publisher_launch.launch" /> -->
+
+    <rosparam file="$(find earth_rover_control)/config/control.yaml" command="load" />
+
+	<!-- Load the controller -->
+	<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" args=" $(arg steered_controller) joint_state_controller" />
+
+    <!-- Load a Controller MUX -->
+    <node pkg="twist_mux" type="twist_mux" name="twist_mux">
+        <rosparam command="load" file="$(find earth_rover_control)/config/mux_config.yaml" />
+        <remap from="cmd_vel_out" to="$(arg steered_controller)/cmd_vel" />
+    </node>
+
+</launch>

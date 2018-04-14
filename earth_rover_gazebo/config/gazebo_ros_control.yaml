@@ -1,6 +1,14 @@
-# pid_gains:
-#   defaults: &defaults
-#     p: 100.0
-#     i: 1.0
-#     d: 0.0
+pid_gains:
+  defaults: &defaults
+    p: 100.0
+    i: 1.0
+    d: 0.0
+  front_left_ankle_joint: *defaults
+  front_left_drive_joint: *defaults
+  front_right_ankle_joint: *defaults
+  front_right_wheel_joint: *defaults
+  back_left_ankle_joint: *defaults
+  back_left_wheel_joint: *defaults
+  back_right_ankle_joint: *defaults
+  back_right_wheel_joint: *defaults
   
